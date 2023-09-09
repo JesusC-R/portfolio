@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
-import path from "path";
+import { GithubIcon, LinkedInIcon } from "./Icons";
+import { motion } from "framer-motion";
 
 interface CustomLinkProps {
   href: string;
@@ -42,25 +43,25 @@ const NavBar = () => {
         <CustomLink href="/projects" title="Projects" className="mx-4" />
         <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
-      <nav>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
+      <nav className="flex items-center justify-between flex-wrap">
+        <motion.a
+          className="w-8 mr-3"
+          href="https://github.com/JesusC-R"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <GithubIcon />
+        </motion.a>
+        <motion.a
+          className="w-8 mr-3"
+          href="https://www.linkedin.com/in/jesus-cuevas-rodarte-4560a7227"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <LinkedInIcon />
+        </motion.a>
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[50%]">
         <Logo />
