@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import Layout from "./components/Layout";
 import profilePic from "../../public/images/profile/developer-pic-1.png";
 import AnimatedText from "./components/text/AnimatedText";
-import Link from "next/link";
+import { LinkArrowIcon } from "./components/Icons";
 
 export default function Home() {
   return (
@@ -27,11 +29,19 @@ export default function Home() {
                 href="/dummy.pdf"
                 target="_blank"
                 className="flex items-center bg-dark text-light p-2.5 px-6
-                rounded-lg text-lg font-semibold"
+                rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
+                border border-solid border-transparent hover:border-dark"
               >
                 Resume
+                <LinkArrowIcon className="w-6 ml-1" />
               </Link>
-              <Link href="mailto:cuevasrodartej@gmail.com">Contact</Link>
+              <Link
+                href="mailto:cuevasrodartej@gmail.com"
+                target="_blank"
+                className="ml-4 text-lg font-medium capitalize text-dark underline"
+              >
+                Contact
+              </Link>
             </div>
           </div>
         </div>
