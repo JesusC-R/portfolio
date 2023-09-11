@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import profilePic from "../../public/images/profile/developer-pic-1.png";
 import AnimatedText from "./components/text/AnimatedText";
 import { LinkArrowIcon } from "./components/Icons";
+import HireMe from "./components/text/HireMe";
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ export default function Home() {
           </div>
         </div>
       </Layout>
+      <HireMe />
     </main>
   );
 }
