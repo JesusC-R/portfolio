@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Helix",
-  description: "Meet Helix a web developer",
+  title: "JCR",
+  description: "Meet JCR a web developer",
 };
 
 export default function RootLayout({
