@@ -7,6 +7,8 @@ import Image from "next/image";
 import AnimatedText from "../../components/text/AnimatedText";
 import profilePic from "../../../../public/images/profile/developer-pic-2.jpg";
 import Layout from "@/app/components/Layout";
+import Skills from "@/app/(pages)/about/components/Skills";
+import Experience from "./components/Experience";
 
 interface AnimatedNumbersProps {
   value: number;
@@ -124,6 +126,9 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          <Skills />
+          <Experience />
         </Layout>
       </div>
     </>
