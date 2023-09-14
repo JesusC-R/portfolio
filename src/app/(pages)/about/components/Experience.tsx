@@ -1,6 +1,8 @@
 "use client";
 
+import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
+import LiIcon from "./LiIcon";
 
 interface DetailsProps {
   position: string;
@@ -27,8 +29,13 @@ const Details: React.FC<DetailsProps> = ({
       className="flex flex-col items-center justify-between my-8 first:mt-0
         last:mb-0 w-[60%] mx-auto "
     >
+      <LiIcon ref={ref} />
 
-      <div>
+      <motion.div
+        initial={{ y: 50 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, type: "string" }}
+      >
         {company ? (
           <h3 className="capitalize font-bold text-2xl">
             {position}&nbsp;
@@ -47,21 +54,29 @@ const Details: React.FC<DetailsProps> = ({
           {time} | {address}
         </span>
         <p className="font-mdeium w-full">{work}</p>
-      </div>
+      </motion.div>
     </li>
   );
 };
 
 const Experience = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center start"],
+  });
+
   return (
     <div className="my-64">
       <h2 className="font-bold text-8xl mb-32 w-full text-center">
         Experience
       </h2>
-      <div className="w-[75%] mx-auto relative">
-        <div
+      <div ref={ref} className="w-[75%] mx-auto relative">
+        <motion.div
           className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top"
+          style={{ scaleY: scrollYProgress }}
         />
+
         <ul>
           <Details
             position="Software Engineer"
