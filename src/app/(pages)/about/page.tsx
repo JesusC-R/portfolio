@@ -9,6 +9,7 @@ import profilePic from "../../../../public/images/profile/developer-pic-2.jpg";
 import Layout from "@/app/components/Layout";
 import Skills from "@/app/(pages)/about/components/Skills";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
 
 interface AnimatedNumbersProps {
   value: number;
@@ -85,7 +86,7 @@ const About = () => {
             </div>
             <div
               className="col-span-3 relative h-max rounded-2xl border-2
-            border-solid border-dark bg-light p-8"
+                border-solid border-dark bg-light p-8"
             >
               <div
                 className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%]
@@ -129,6 +130,8 @@ const About = () => {
 
           <Skills />
           <Experience />
+          <Education />
+
         </Layout>
       </div>
     </>
