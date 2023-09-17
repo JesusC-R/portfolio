@@ -5,12 +5,13 @@ import AnimatedText from "@/app/components/text/AnimatedText";
 import Head from "next/head";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 // Article Images
 import articleImg from "../../../../public/images/articles/pagination component in reactjs.jpg";
 import articleImg2 from "../../../../public/images/articles/smooth scrolling in reactjs.png";
 import articleImg3 from "../../../../public/images/articles/create modal component in react using react portals.png";
+import { useRef } from "react";
 
 interface ArticleProps {
   img: StaticImageData | string;
@@ -23,6 +24,45 @@ interface ArticleProps {
 }
 
 const FramerImage = motion(Image);
+
+const HoverArticleImg: React.FC<ArticleProps> = ({ title, img, link }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const imgRef = useRef(null);
+
+  function handleMouse(event: any) {
+    imgRef.current.style.display = "inline-block";
+    x.set(event.pageX);
+    y.set(-10);
+  }
+  function handleMouseLeave(event: any) {
+    imgRef.current.style.display = "none";
+    x.set(0);
+    y.set(0);
+  }
+
+  return (
+    <Link
+      href={link}
+      target="_blank"
+      onMouseMove={handleMouse}
+      onMouseLeave={handleMouseLeave}
+    >
+      <h2 className="capitalize text-xl font-semibold hover:underline">
+        {title}
+      </h2>
+      <FramerImage
+        ref={imgRef}
+        src={img}
+        alt="Image"
+        className="w-96 h-auto hidden absolute rounded-lg z-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
+        style={{ x: x, y: y }}
+      />
+    </Link>
+  );
+};
 
 const Article: React.FC<ArticleProps> = ({
   img,
@@ -67,17 +107,19 @@ const Article: React.FC<ArticleProps> = ({
     );
   }
   return (
-    <li
+    <motion.li
       className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center
         justify-between bg-light text-dark first:mt-0 border border-solid
-        border-dark border-r-4 border-b-4">
-      <Link href={link} target="_blank">
-        <h2 className="capitalize text-xl font-semibold hover:underline">{title}</h2>
-      </Link>
+        border-dark border-r-4 border-b-4"
+      initial={{ y: 200 }}
+      whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeOut" } }}
+      viewport={{ once: true }}
+    >
+      <HoverArticleImg title={title} img={img} link={link} />
       <span className="text-primary font-semibold pl-4 ">{date}</span>
-    </li>
+    </motion.li>
   );
-};
+}; 
 
 const Articles = () => {
   return (
