@@ -38,7 +38,8 @@ const Project: React.FC<ProjectProps> = ({
     <article
       className={clsx(
         `flex items-center border shadow-2xl relative
-        border-solid border-dark bg-light w-full`,
+        border-solid border-dark bg-light w-full
+        border-r-[0.7rem] border-b-[0.7rem]`,
         isFeatured
           ? `rounded-3xl p-12 justify-between`
           : `rounded-2xl p-6 relative justify-center flex-col`
