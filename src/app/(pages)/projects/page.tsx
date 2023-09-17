@@ -11,6 +11,7 @@ import AnimatedText from "@/app/components/text/AnimatedText";
 
 // Project Images
 import project1 from "../../../../public/images/projects/crypto-screener-cover-image.jpg";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   type?: string;
@@ -21,6 +22,8 @@ interface ProjectProps {
   github: string;
   isFeatured: boolean;
 }
+
+const Framerimage = motion(Image);
 
 const Project: React.FC<ProjectProps> = ({
   type,
@@ -53,7 +56,13 @@ const Project: React.FC<ProjectProps> = ({
           isFeatured ? `w-1/2` : `w-full`
         )}
       >
-        <Image src={img} alt={title} className="w-full h-auto" />
+        <Framerimage
+          src={img}
+          alt={title}
+          className="w-full h-auto"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+        />
       </Link>
 
       <div
