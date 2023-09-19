@@ -1,39 +1,46 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-const useThemeHook = () => {
-  const preferDarkQuery = "(prefers-color-scheme: dark)";
-  const userPreference = window.localStorage.getItem("theme");
-
-  const getInitialMode = () => {
-    if (userPreference) {
-      return userPreference;
-    } else if (window.matchMedia(preferDarkQuery).matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
-  };
-
-  const [mode, setMode] = useState(getInitialMode);
+const useThemeSwitcher = () => {
+  const preferDarkQuery = "(prefer-color-scheme: dark)";
+  const [mode, setMode] = useState("");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);
+    const userPreference = window.localStorage.getItem("theme");
 
     const handleChange = () => {
-      const newMode = mediaQuery.matches ? "dark" : "light";
-      setMode(newMode);
-      window.localStorage.setItem("theme", newMode);
-    };
+      if (userPreference) {
+        let check = userPreference === "dark" ? "dark" : "light";
+        setMode(check);
+        if (check === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } else {
+        let check = mediaQuery.matches ? "dark" : "light";
+        setMode(check);
 
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
+        if (check === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+    };
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", mode === "dark");
+    if (mode === "dark") {
+      window.localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      window.localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+    }
   }, [mode]);
 
   return [mode, setMode];
 };
 
-export default useThemeHook;
+export default useThemeSwitcher;
