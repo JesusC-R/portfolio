@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useThemeSwitcher = () => {
   const preferDarkQuery = "(prefer-color-scheme: dark)";
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState<string>("");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);
@@ -28,6 +28,8 @@ const useThemeSwitcher = () => {
         }
       }
     };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   useEffect(() => {
