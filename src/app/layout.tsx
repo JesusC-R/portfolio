@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${montserrat.className}
-          bg-light w-full min-h-screen`}
+          bg-light w-full min-h-screen dark:bg-dark`}
       >
         <NavBar />
         {children}

@@ -13,7 +13,9 @@ const Logo = () => {
     <div className="flex items-center justify-center mt-2">
       <MotionLink
         href="/"
-        className="h-16 w-16 bg-gray-700 text-white rounded-full p-4 flex items-center justify-center text-2xl font-bold transition-transform transform hover:scale-105"
+        className="h-16 w-16 bg-gray-700 text-white rounded-full p-4 flex items-center
+          justify-center text-2xl font-bold transition-transform transform hover:scale-105
+          border border-solid border-transparent dark:border-light"
         variants={buttonVariants}
         initial="initial"
         whileHover="hover"

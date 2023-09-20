@@ -13,7 +13,8 @@ const Skills = () => {
     return (
       <motion.div
         className="flex items-center justify-center bg-dark font-semibold
-            rounded-full text-light py-3 px-6 cursor-pointer shadow-dark absolute"
+            rounded-full text-light py-3 px-6 cursor-pointer shadow-dark absolute
+            dark:bg-light dark:shadow-light dark:text-dark"
         whileHover={{ scale: 1.05 }}
         initial={{ x: 0, y: 0 }}
         whileInView={{ x: x, y: y }}
@@ -26,14 +27,15 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="font-bold text-8xl mt-64 w-full text-center">Skills</h2>
+      <h2 className="font-bold text-8xl mt-64 w-full text-center dark:text-light">Skills</h2>
       <div
-        className="w-full h-screen relative flex items-center
-          justify-center rounded-full bg-circularLight"
+        className="w-full h-screen relative flex items-center dark:bg-light
+          justify-center rounded-full bg-circularLight dark:bg-circularDark dark:text-light"
       >
         <motion.div
           className="flex items-center justify-center bg-dark text-light
-            rounded-full font-semibold shadow-dark p-8 cursor-pointer"
+            rounded-full font-semibold shadow-dark p-8 cursor-pointer
+            dark:bg-light dark:text-dark dark:shadow-light"
           whileHover={{ scale: 1.05 }}
         >
           Web

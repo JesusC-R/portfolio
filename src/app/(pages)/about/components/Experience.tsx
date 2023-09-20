@@ -37,7 +37,7 @@ const Details: React.FC<DetailsProps> = ({
         transition={{ duration: 0.5, type: "string" }}
       >
         {company ? (
-          <h3 className="capitalize font-bold text-2xl">
+          <h3 className="capitalize font-bold text-2xl dark:text-light">
             {position}&nbsp;
             <a
               href={companyLink}
@@ -48,12 +48,12 @@ const Details: React.FC<DetailsProps> = ({
             </a>
           </h3>
         ) : (
-          <h3 className="capitalize font-bold text-2xl">{position}</h3>
+          <h3 className="capitalize font-bold text-2xl dark:text-light">{position}</h3>
         )}
-        <span className="capitalize font-medium text-dark/75">
+        <span className="capitalize font-medium text-dark/75 dark:text-light/75">
           {time} | {address}
         </span>
-        <p className="font-mdeium w-full">{work}</p>
+        <p className="font-mdeium w-full dark:text-light">{work}</p>
       </motion.div>
     </li>
   );
@@ -68,12 +68,12 @@ const Experience = () => {
 
   return (
     <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center">
+      <h2 className="font-bold text-8xl mb-32 w-full text-center dark:text-light">
         Experience
       </h2>
       <div ref={ref} className="w-[75%] mx-auto relative">
         <motion.div
-          className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top"
+          className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top dark:bg-light"
           style={{ scaleY: scrollYProgress }}
         />
 

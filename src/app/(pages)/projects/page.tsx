@@ -39,7 +39,8 @@ const Project: React.FC<ProjectProps> = ({
       className={clsx(
         `flex items-center border shadow-2xl relative
         border-solid border-dark bg-light w-full
-        border-r-[0.7rem] border-b-[0.7rem]`,
+        border-r-[0.7rem] border-b-[0.7rem] dark:border-light
+        dark:bg-dark`,
         isFeatured
           ? `rounded-3xl p-12 justify-between`
           : `rounded-2xl p-6 relative justify-center flex-col`
@@ -47,7 +48,7 @@ const Project: React.FC<ProjectProps> = ({
     >
       <div
         className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%]
-          rounded-[2.5`rem] bg-dark"
+          rounded-[2.5`rem] bg-dark dark:bg-light"
       />
       <Link
         href={link}
@@ -76,14 +77,18 @@ const Project: React.FC<ProjectProps> = ({
         <Link href={link} target="_blank">
           <h2
             className={clsx(
-              `my-2 w-full text-left font-bold`,
+              `my-2 w-full text-left font-bold dark:text-light`,
               isFeatured ? `text-4xl` : `text-3xl`
             )}
           >
             {title}
           </h2>
         </Link>
-        {isFeatured && <p className="my-2 font-medium text-dark">{summary}</p>}
+        {isFeatured && (
+          <p className="my-2 font-medium text-dark dark:text-light">
+            {summary}
+          </p>
+        )}
         <div
           className={clsx(
             `mt-2 flex items-center`,
@@ -93,7 +98,10 @@ const Project: React.FC<ProjectProps> = ({
           <Link
             href={github}
             target="_blank"
-            className={clsx(isFeatured ? `w-10` : `w-8`)}
+            className={clsx(
+              `dark:text-light hover:text-dark/75 hover:dark:text-light/75`,
+              isFeatured ? `w-10` : `w-8 `
+            )}
           >
             <GithubIcon />
           </Link>
@@ -102,9 +110,12 @@ const Project: React.FC<ProjectProps> = ({
             target="_blank"
             className={clsx(
               isFeatured
-                ? `ml-4 rounded-lg bg-dark text-light p-2 px-6
-                text-lg font-semibold`
-                : `m-4 text-lg font-semibold underline`
+                ? `ml-4 rounded-lg bg-dark text-light p-2 px-6 border border-solid
+                text-lg font-semibold hover:text-dark hover:bg-light hover:border-dark
+                dark:bg-light dark:text-dark hover:dark:text-light hover:dark:bg-dark
+                hover:dark:border-light`
+                : `m-4 text-lg font-semibold underline dark:text-light
+                hover:text-dark/75 hover:dark:text-light/75`
             )}
           >
             {isFeatured ? "Visit Project" : "Visit"}
