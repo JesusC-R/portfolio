@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
-import { GithubIcon, LinkedInIcon } from "./Icons";
+import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon } from "./Icons";
 import { motion } from "framer-motion";
+import useThemeSwitcher from "../hooks/useThemeSwitcher";
 
 interface CustomLinkProps {
   href: string;
@@ -12,25 +13,27 @@ interface CustomLinkProps {
   className?: string;
 }
 
-const NavBar = () => {
+const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
   const pathname = usePathname();
 
-  const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
-    return (
-      <Link href={href} className={`${className} relative group`}>
-        {title}
-        <span
-          className={`h-[1px] inline-block w-0 bg-dark
+  return (
+    <Link href={href} className={`${className} relative group`}>
+      {title}
+      <span
+        className={`h-[1px] inline-block w-0 bg-dark
             absolute left-0 -bottom-0.5 group-hover:w-full transition-[width]
             ease duration-300
             ${pathname === href ? `w-full` : `w-0`}
             `}
-        >
-          &nbsp;
-        </span>
-      </Link>
-    );
-  };
+      >
+        &nbsp;
+      </span>
+    </Link>
+  );
+};
+
+const NavBar = () => {
+  const [mode, setMode] = useThemeSwitcher();
 
   return (
     <header
@@ -62,6 +65,18 @@ const NavBar = () => {
         >
           <LinkedInIcon />
         </motion.a>
+
+        <button
+          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          className="ml-3 flex items-center justify-center rounded-full p-1"
+        >
+          {mode === "dark" ? (
+            <SunIcon className="fill-dark" />
+          ) : (
+            <MoonIcon className="fill-dark" />
+          )}
+        </button>
+
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[50%]">
         <Logo />
