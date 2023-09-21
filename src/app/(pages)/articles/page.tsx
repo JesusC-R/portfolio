@@ -55,6 +55,9 @@ const HoverArticleImg: React.FC<ArticleProps> = ({ title, img, link }) => {
         ref={imgRef}
         src={img}
         alt="Image"
+        sizes="(max-width: 768px) 100vw,
+          (max-width: 1200px) 50vw,
+          33vw"
         className="w-96 h-auto hidden absolute rounded-lg z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
@@ -91,6 +94,9 @@ const Article: React.FC<ArticleProps> = ({
           <FramerImage
             src={img}
             alt={title}
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
             className="w-full h-auto"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
