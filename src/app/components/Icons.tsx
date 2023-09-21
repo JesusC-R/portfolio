@@ -60,13 +60,45 @@ export const SunIcon: React.FC<SvgComponentProps> = ({
     className={`w-full h-auto ${className}`}
     {...rest}
   >
+    {" "}
     <g
       fill="none"
       stroke="currentColor"
       strokeDasharray={2}
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={2}
+      strokeWidth={1}
+    >
+      <path d="M12 21v1m9-10h1M12 3V2M3 12H2" />
+      <path d="m18.5 18.5.5.5m-.5-13.5L19 5m-13.5.5L5 5m.5 13.5L5 19" />
+    </g>
+    <g fill="none" fillOpacity={1}>
+      <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81z" />
+      <path d="M13.61 5.25 15.25 4l-2.06-.05L12.5 2l-.69 1.95L9.75 4l1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17z" />
+      <path d="M19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17z" />
+      <path d="m20.828 9.731 1.876-1.439-2.366-.067L19.552 6l-.786 2.225-2.366.067 1.876 1.439L17.601 12l1.951-1.342L21.503 12z" />
+    </g>
+    <mask id="a">
+      <circle cx={12} cy={12} r={12} fill="#fff" />
+      <circle cx={22} cy={2} r={3} fill="#fff" />
+      <circle cx={22} cy={2} r={1} />
+    </mask>
+    <circle cx={12} cy={12} r={6} fill="currentColor" mask="url(#a)">
+      {
+        React.createElement("set", {
+          attributeName: "opacity",
+          begin: "0.5s",
+          to: 1,
+        }) as JSX.Element
+      }
+    </circle>
+    <g
+      fill="none"
+      stroke="currentColor"
+      strokeDasharray={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1}
     >
       <path d="M12 21v1m9-10h1M12 3V2M3 12H2">
         <animate
@@ -206,7 +238,7 @@ export const SunIcon: React.FC<SvgComponentProps> = ({
         React.createElement("set", {
           attributeName: "opacity",
           begin: "0.5s",
-          to: 0,
+          to: 1,
         }) as JSX.Element
       }
       <animate
@@ -214,7 +246,7 @@ export const SunIcon: React.FC<SvgComponentProps> = ({
         attributeName="r"
         begin="0.1s"
         dur="0.4s"
-        values="6;10"
+        values="6;4"
       />
     </circle>
   </svg>
@@ -279,7 +311,7 @@ export const MoonIcon: React.FC<SvgComponentProps> = ({
         React.createElement("set", {
           attributeName: "opacity",
           begin: "0.6s",
-          to: 0,
+          to: 1,
         }) as JSX.Element
       }
     </g>
@@ -527,7 +559,10 @@ export const MiscellaneousIcon: React.FC<SvgComponentProps> = ({
   </svg>
 );
 
-export const LinkArrowIcon: React.FC<SvgComponentProps> = ({ className, ...rest }) => (
+export const LinkArrowIcon: React.FC<SvgComponentProps> = ({
+  className,
+  ...rest
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
