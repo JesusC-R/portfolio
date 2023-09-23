@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,8 +8,11 @@ import profilePic from "../../public/images/profile/developer-pic-1.png";
 import AnimatedText from "./components/text/AnimatedText";
 import { LinkArrowIcon } from "./components/Icons";
 import HireMe from "./components/text/HireMe";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const MotionLink = motion(Link);
+
   return (
     <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-0">
@@ -34,9 +39,11 @@ export default function Home() {
               articles, showcasing my expertice in React.js and web development.
             </p>
             <div className="flex items-center self-start mt-2">
-              <Link
+              <MotionLink
                 href="/dummy.pdf"
                 target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
                 className="flex items-center bg-dark text-light p-2.5 px-6
                 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                 border border-solid border-transparent hover:border-dark
@@ -45,7 +52,7 @@ export default function Home() {
               >
                 Resume
                 <LinkArrowIcon className="w-6 ml-1" />
-              </Link>
+              </MotionLink>
               <Link
                 href="mailto:cuevasrodartej@gmail.com"
                 target="_blank"
