@@ -10,7 +10,10 @@ const Logo = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mt-2">
+    <div
+      className="flex items-center justify-center mt-2 md:absolute md:mr-[11rem]
+        sm:absoulte sm:mr-[15rem]"
+    >
       <MotionLink
         href="/"
         className="h-16 w-16 bg-gray-700 text-white rounded-full p-4 flex items-center

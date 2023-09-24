@@ -82,11 +82,13 @@ const NavBar = () => {
   return (
     <header
       className="w-full px-32 py-8 font-medium flex
-        items-center justify-between dark:text-light relative"
+        items-center justify-between dark:text-light relative
+        z-50 lg:px-16 md:px-12 sm:px-8"
     >
       {/* Hamburger Button */}
       <button
-        className="hidden lg:flex flex-col justify-center items-center fixed z-50"
+        className="hidden lg:flex flex-col justify-center items-center fixed z-50
+          lg:mt-5"
         onClick={handleClick}
       >
         <span
@@ -233,7 +235,10 @@ const NavBar = () => {
         </motion.div>
       ) : null}
 
-      <div className="absolute left-[50%] top-2 translate-x-[50%]">
+      <div
+        className="absolute left-[50%] top-2 translate-x-[50%]
+          lg:absolute lg:translate-x-[50%] lg:left-[45%] lg:top-2"
+        >
         <Logo />
       </div>
     </header>
