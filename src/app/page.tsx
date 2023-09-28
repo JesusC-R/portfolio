@@ -17,13 +17,12 @@ export default function Home() {
     <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-0 md:pt-16 sm:pt-8">
         <div className="flex items-center justify-between w-full image-animation lg:flex-col">
-          <div className="w-1/2 md:w-full lg:w-2/3 xs:w-[200%] xs:h-[200%]">
+          <div className="w-1/2 md:w-full lg:w-2/3 xs:w-[200%] xs:h-[200%] xs:-mt-[2rem]">
             <Image
               src={profilePic}
               alt="Image"
               className="w-full h-auto md:inline-block
-                md:w-[100%]
-                xs:w-[100%] xs:h-[100%]"
+                md:w-[100%]"
               priority
               sizes="(max-width: 768px) 100vw,
                 (max-width: 1200px) 50vw,
