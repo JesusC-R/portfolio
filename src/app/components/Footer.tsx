@@ -13,9 +13,9 @@ const Footer = () => {
     >
       <Layout
         className="py-8 flex items-center justify-between dark:text-light
-          lg:flex-col lg:py-6 xs:py-5 xs:justify-start xs:w-[120%] xs:-ml-[1.5rem]">
-        <span className="xs:justify-end">{new Date().getFullYear()} &copy; All Rights Reserved.</span>
-        <Link href="/">JCR</Link>
+          lg:flex-col lg:py-6 xs:py-5 whitespace-nowrap">
+        <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
+        <Link href="/" className="xs:pt-2">JCR</Link>
       </Layout>
     </footer>
   );

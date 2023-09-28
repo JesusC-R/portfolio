@@ -166,7 +166,7 @@ const NavBar = () => {
           animate={{ scale: 1, opacity: 1, }}
           className="min-w-[70vw] flex flex-col justify-between items-center
             fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-dark/50
-            dark:bg-light/50 rounded-lg backdrop-blur-xl py-32"
+            dark:bg-light/50 rounded-lg backdrop-blur-xl py-32 xs:py-12"
         >
           <nav className="flex items-center flex-col justify-center py-[2rem]">
             <CustomMobileLink
