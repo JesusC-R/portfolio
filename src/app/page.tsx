@@ -17,21 +17,26 @@ export default function Home() {
     <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-0 md:pt-16 sm:pt-8">
         <div className="flex items-center justify-between w-full image-animation lg:flex-col">
-          <div className="w-1/2 md:w-full lg:w-2/3">
+          <div className="w-1/2 md:w-full lg:w-2/3 xs:w-[200%] xs:h-[200%]">
             <Image
               src={profilePic}
               alt="Image"
-              className="w-full h-auto md:inline-block md:w-[100%]"
+              className="w-full h-auto md:inline-block
+                md:w-[100%]
+                xs:w-[100%] xs:h-[100%]"
               priority
               sizes="(max-width: 768px) 100vw,
                 (max-width: 1200px) 50vw,
                 33vw"
             />
           </div>
-          <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
+          <div
+            className="w-1/2 flex flex-col items-center self-center lg:w-full
+            lg:text-center xs:w-[200%]"
+          >
             <AnimatedText
               className="!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl
-                sm:!text-3xl"
+                sm:!text-3xl xs:!text-xl"
               text="Turning Vision Into Reality With Code And Design"
             />
             <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
