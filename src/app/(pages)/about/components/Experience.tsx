@@ -27,7 +27,7 @@ const Details: React.FC<DetailsProps> = ({
     <li
       ref={ref}
       className="flex flex-col items-center justify-between my-8 first:mt-0
-        last:mb-0 w-[60%] mx-auto "
+        last:mb-0 w-[60%] mx-auto md:w-[80%]"
     >
       <LiIcon ref={ref} />
 
@@ -37,7 +37,7 @@ const Details: React.FC<DetailsProps> = ({
         transition={{ duration: 0.5, type: "string" }}
       >
         {company ? (
-          <h3 className="capitalize font-bold text-2xl dark:text-light">
+          <h3 className="capitalize font-bold text-2xl dark:text-light sm:text-xl xs:text-lg">
             {position}&nbsp;
             <a
               href={companyLink}
@@ -50,10 +50,10 @@ const Details: React.FC<DetailsProps> = ({
         ) : (
           <h3 className="capitalize font-bold text-2xl dark:text-light">{position}</h3>
         )}
-        <span className="capitalize font-medium text-dark/75 dark:text-light/75">
+        <span className="capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm">
           {time} | {address}
         </span>
-        <p className="font-mdeium w-full dark:text-light">{work}</p>
+        <p className="font-mdeium w-full dark:text-light md:text-sm">{work}</p>
       </motion.div>
     </li>
   );
@@ -68,16 +68,20 @@ const Experience = () => {
 
   return (
     <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center dark:text-light">
+      <h2
+        className="font-bold text-8xl mb-32 w-full text-center dark:text-light md:text-6xl
+          xs:text-4xl md:mb-16 "
+      >
         Experience
       </h2>
-      <div ref={ref} className="w-[75%] mx-auto relative">
+      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
         <motion.div
-          className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top dark:bg-light"
+          className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
+            md:w-[2px] md:left-[30px] xs:left-[20px]"
           style={{ scaleY: scrollYProgress }}
         />
 
-        <ul>
+        <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-1">
           <Details
             position="Software Engineer"
             company="Google"

@@ -57,21 +57,19 @@ const About = () => {
         <meta name="description" content="Any description" />
       </head>
       <div className="flex flex-col items-center justify-center">
-        <Layout className="pt-16 md:pt-8 sm:pt-4">
+        <Layout className="pt-16">
           <AnimatedText
             text="Passion Fuels Purpose"
-            className="mb-8 md:text-5xl sm:text-2xl xs:text-xl"
+            className="mb-16 xl:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
           {/* Grid */}
-          <div className="grid w-full grid-cols-9 md:grid-cols-6 xs:grid-cols-4 gap-8 md:gap-4 xs:gap-2">
+          <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
 
             {/* Biography */}
             <div
-              className="col-span-3 flex flex-col items-start justify-start order-1
-              lg:col-span-6
-              md:col-span-6 md:order-2
-              xs:col-span-4 xs:items-center xs:justify-between xs:p-0 xs:w-full xs:-ml-0"
+              className="col-span-3 flex flex-col items-start justify-start xl:col-span-4
+               md:order-2 md:col-span-8"
             >
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 Biography
@@ -97,15 +95,14 @@ const About = () => {
               </p>
             </div>
 
+            {/* Image */}
             <div
               className="col-span-3 relative h-max rounded-2xl border-2
-                border-solid border-dark bg-light dark:border-light dark:bg-dark order-2
-                lg:col-span-3
-                md:left-0 md:order-1 md:col-span-3
-                sm:right-0 sm:col-span-5"
+                border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light
+                xl:col-span-4 md:order-1 md:col-span-8"
             >
               <div
-                className="absolute top-0 -right-3 -z-10 w-[110%] h-[105%]
+                className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%]
                 bg-dark rounded-[2rem] dark:bg-light"
               />
               <Image
@@ -120,35 +117,32 @@ const About = () => {
 
             {/* Numbers */}
             <div
-              className="col-span-2 flex flex-col flex-grow items-end justify-between order-3
-              lg:flex-row lg:right-0
-              md:order-3 md:col-span-5 md:pl-0 md:flex-row
-              sm:col-span-5
-              xs:col-span-2"
+              className="col-span-2 flex flex-col items-end justify-between xl:col-span-8
+                xl:flex-row xl:items-center md:order-3"
             >
-              <div className="flex flex-col items-center justify-center">
-                <span className="inline-block text-7xl font-bold dark:text-light md:text-5xl">
+              <div className="flex flex-col items-center justify-center xl:items-center">
+                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={10} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 md:text-sm md:text-center sm:text-lg">
+                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">
                   Satisfied Clients
                 </h2>
               </div>
 
-              <div className="flex flex-col items-center justify-center md:mx-[1rem]">
-                <span className="inline-block text-7xl font-bold dark:text-light md:text-5xl">
+              <div className="flex flex-col items-center justify-center md:mx-[1rem] xs:items-center">
+                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={10} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 md:text-sm md:text-center sm:text-lg">
+                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">
                   Projects Completed
                 </h2>
               </div>
 
-              <div className="flex flex-col items-center justify-center">
-                <span className="inline-block text-7xl font-bold dark:text-light md:text-5xl">
+              <div className="flex flex-col items-center justify-center xl:items-center">
+                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={2} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 md:text-sm md:text-center sm:text-lg">
+                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">
                   Years of Experience
                 </h2>
               </div>
@@ -156,9 +150,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* <Skills />
+          <Skills />
           <Experience />
-          <Education /> */}
+          <Education />
         </Layout>
       </div>
     </>
