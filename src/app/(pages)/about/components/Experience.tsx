@@ -67,21 +67,21 @@ const Experience = () => {
   });
 
   return (
-    <div className="my-64">
+    <div className="my-64 sm:my-32">
       <h2
         className="font-bold text-8xl mb-32 w-full text-center dark:text-light md:text-6xl
           xs:text-4xl md:mb-16 "
       >
         Experience
       </h2>
-      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
+      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full sm:right-[30%]">
         <motion.div
           className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
             md:w-[2px] md:left-[30px] xs:left-[20px]"
           style={{ scaleY: scrollYProgress }}
         />
 
-        <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-1">
+        <ul className="w-full flex flex-col items-start justify-between ml-4 sm:w-[150%] sm:mx-auto sm:ml-10">
           <Details
             position="Software Engineer"
             company="Google"
@@ -110,23 +110,6 @@ const Experience = () => {
             address="Seattle, WA."
             work="Worked on a team responsible for developing Amazon's mobile app, including implementing new features suc
             as product recommendations and user reviews, and optimizing the app's performance and reliability."
-          />
-          <Details
-            position="Software Developer Intern "
-            company="Microsoft"
-            companyLink="www.microsoft.com"
-            time="Summer 2019"
-            address="RedMond, WA."
-            work="Worked on a team responsible for developing new features for Microsoft's Windows operating system,
-            including implementing a new user interface for a system settings panel and optimizing the performance of
-            a core system component."
-          />
-          <Details
-            position="Teaching Assistant MIT"
-            time="Fall 2018"
-            address="Massachusetts Ave, Cambridge, MA."
-            work="Assisted in teaching a course on computer programming, held office hours to help students with assignments,
-            and graded exams and assignments."
           />
         </ul>
       </div>

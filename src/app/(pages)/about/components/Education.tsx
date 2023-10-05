@@ -42,15 +42,15 @@ const Education = () => {
   });
 
   return (
-    <div className="my-64">
+    <div className="my-64 sm:my-32">
       <h2 className="font-bold text-8xl mb-32 w-full text-center dark:text-light md:text-6xl xs:text-4xl md:mb-16">Education</h2>
-      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
+      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full sm:right-[30%]">
         <motion.div
           className="absolute left-[35px] top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
             md:w-[2px] md:left-[30px] xs:left-[20px]"
           style={{ scaleY: scrollYProgress }}
         />
-        <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
+        <ul className="w-full flex flex-col items-start justify-between ml-4 sm:w-[150%] sm:mx-auto sm:ml-10">
           <Details
             type="Associates's Of Science In Computer Science"
             place="Long Beach City College, CA"
