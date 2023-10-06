@@ -40,22 +40,35 @@ const Project: React.FC<ProjectProps> = ({
         `flex items-center border shadow-2xl relative
         border-solid border-dark bg-light w-full
         border-r-[0.7rem] border-b-[0.7rem] dark:border-light
-        dark:bg-dark`,
+        dark:bg-dark sm:p-4 sm:rounded-br-3xl  md:p-4 md:w-[80%] md:mx-auto
+        sm:rounded-2xl xs:w-[66%] sm:left-[4%]`,
         isFeatured
-          ? `rounded-3xl p-12 justify-between`
+          ? `rounded-3xl p-12 justify-between lg:flex-col lg:p-8
+             `
           : `rounded-2xl p-6 relative justify-center flex-col`
       )}
     >
-      <div
-        className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%]
-          rounded-[2.5`rem] bg-dark dark:bg-light"
-      />
+      {isFeatured ? (
+        <div
+          className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%]
+          rounded-[2.5rem] bg-dark dark:bg-light
+          rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-[100%] xs:rounded-[1.5rem]"
+        />
+      ) : (
+        <div
+          className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%]
+          rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl
+          md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]
+          "
+        />
+      )}
+
       <Link
         href={link}
         target="_blank"
         className={clsx(
           `cursor-pointer overflow-hidden rounded-lg`,
-          isFeatured ? `w-1/2` : `w-full`
+          isFeatured ? `w-1/2 lg:w-full` : `w-full`
         )}
       >
         <Framerimage
@@ -73,22 +86,29 @@ const Project: React.FC<ProjectProps> = ({
       <div
         className={clsx(
           `flex flex-col items-start justify-between`,
-          isFeatured ? `w-1/2 pl-6` : `w-full mt-4`
+          isFeatured ? `w-1/2 pl-6 lg:w-full lg:pl-0 lg:pt-6` : `w-full mt-4`
         )}
       >
-        <span className="text-primary font-medium text">{type}</span>
+        <span
+          className={clsx(
+            `text-primary font-medium text-xl`,
+            isFeatured ? `xs:text-base` : `lg:text-lg md:text-base`
+          )}
+        >
+          {type}
+        </span>
         <Link href={link} target="_blank">
           <h2
             className={clsx(
               `my-2 w-full text-left font-bold dark:text-light`,
-              isFeatured ? `text-4xl` : `text-3xl`
+              isFeatured ? `text-4xl lg:text-3xl xs:text-2xl` : `text-3xl lg:text-2xl`
             )}
           >
             {title}
           </h2>
         </Link>
         {isFeatured && (
-          <p className="my-2 font-medium text-dark dark:text-light">
+          <p className="my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
             {summary}
           </p>
         )}
@@ -116,9 +136,9 @@ const Project: React.FC<ProjectProps> = ({
                 ? `ml-4 rounded-lg bg-dark text-light p-2 px-6 border border-solid
                 text-lg font-semibold hover:text-dark hover:bg-light hover:border-dark
                 dark:bg-light dark:text-dark hover:dark:text-light hover:dark:bg-dark
-                hover:dark:border-light`
+                hover:dark:border-light sm:px-4 sm:text-base`
                 : `m-4 text-lg font-semibold underline dark:text-light
-                hover:text-dark/75 hover:dark:text-light/75`
+                hover:text-dark/75 hover:dark:text-light/75 `
             )}
           >
             {isFeatured ? "Visit Project" : "Visit"}
@@ -135,11 +155,17 @@ const Projects = () => {
       <Head>
         <title>Helix | Projects Page</title>
       </Head>
-      <Layout className="w-full mb-16 flex flex-col items-center justify-center">
-        <AnimatedText text="Imagination Trumps Knowledge!" className="mb-16" />
+      <Layout className="w-full mb-16 flex flex-col items-center justify-center pt-16">
+        <AnimatedText
+          text="Imagination Trumps Knowledge!"
+          className="mb-16 xl:!text-7xl sm:!text-6xl xs:!text-3xl sm:my-8"
+        />
 
-        <div className="grid grid-cols-12 gap-24">
-          <div className="col-span-12">
+        <div
+          className="grid grid-cols-8 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8
+            md:gap-y-24 sm:gap-x-0"
+        >
+          <div className="col-span-8">
             <Project
               title="Crypto Screener Application"
               summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Contet API, React Router
@@ -152,7 +178,7 @@ const Projects = () => {
               isFeatured={true}
             />
           </div>
-          <div className="col-span-6">
+          <div className="col-span-4 sm:col-span-8">
             <Project
               title="Crypto Screener Application"
               link="/"
@@ -162,7 +188,7 @@ const Projects = () => {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4 sm:col-span-8">
             <Project
               title="Crypto Screener Application"
               link="/"
