@@ -60,7 +60,7 @@ const About = () => {
         <Layout className="pt-16">
           <AnimatedText
             text="Passion Fuels Purpose"
-            className="mb-16 xl:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+            className="mb-16 xl:!text-7xl sm:!text-6xl xs:!text-3xl sm:mb-8"
           />
 
           {/* Grid */}
@@ -69,12 +69,12 @@ const About = () => {
             {/* Biography */}
             <div
               className="col-span-3 flex flex-col items-start justify-start xl:col-span-4
-               md:order-2 md:col-span-8"
+               md:order-2 md:col-span-8 sm:order-2 xs:col-span-8 sm:ml-[-15%]"
             >
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 Biography
               </h2>
-              <p className="my-4 font-medium dark:text-light xs:my-2 ">
+              <p className="my-4 font-medium dark:text-light xs:my-2">
                 Hi, I&apos;m Helix, a web developer and UI/UX designer with a
                 passion for creating beautiful, functional, and user-centered
                 digital experiences. With 4 years of experience in the field. I
@@ -99,7 +99,7 @@ const About = () => {
             <div
               className="col-span-3 relative h-max rounded-2xl border-2
                 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light
-                xl:col-span-4 md:order-1 md:col-span-8"
+                xl:col-span-4 md:order-1 md:col-span-8 xs:col-span-8 sm:ml-[-15%]"
             >
               <div
                 className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%]
@@ -118,7 +118,7 @@ const About = () => {
             {/* Numbers */}
             <div
               className="col-span-2 flex flex-col items-end justify-between xl:col-span-8
-                xl:flex-row xl:items-center md:order-3"
+                xl:flex-row xl:items-center md:order-3 sm:col-span-8 sm:ml-[-15%]"
             >
               <div className="flex flex-col items-center justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
