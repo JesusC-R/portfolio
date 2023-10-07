@@ -9,11 +9,6 @@ import { AnimatePresence } from "framer-motion";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "JCR",
-  description: "Meet JCR a web developer",
-};
-
 export default function RootLayout({
   children,
 }: {
