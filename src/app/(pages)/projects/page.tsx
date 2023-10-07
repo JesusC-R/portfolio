@@ -12,6 +12,7 @@ import AnimatedText from "@/app/components/text/AnimatedText";
 // Project Images
 import project1 from "../../../../public/images/projects/crypto-screener-cover-image.jpg";
 import { motion } from "framer-motion";
+import TransitionEffect from "@/app/components/TransitionEffect";
 
 interface ProjectProps {
   type?: string;
@@ -152,6 +153,7 @@ const Project: React.FC<ProjectProps> = ({
 const Projects = () => {
   return (
     <>
+      <TransitionEffect />
       <Head>
         <title>Helix | Projects Page</title>
       </Head>

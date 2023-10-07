@@ -97,6 +97,7 @@ const About = () => {
               </p>
             </div>
 
+            {/* Image */}
             <div
               className="col-span-3 relative h-max rounded-2xl border-2
                 border-solid border-dark bg-light dark:border-light dark:bg-dark order-2

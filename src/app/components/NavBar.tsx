@@ -83,11 +83,11 @@ const NavBar = () => {
     <header
       className="w-full px-32 py-8 font-medium flex
         items-center justify-between dark:text-light relative
-        z-50 lg:px-16 md:px-12 sm:px-8 xs:px-6"
+        z-10 lg:px-16 md:px-12 sm:px-8 xs:px-6"
     >
       {/* Hamburger Button */}
       <button
-        className="hidden lg:flex flex-col justify-center items-center fixed z-50
+        className="hidden lg:flex flex-col justify-center items-center fixed z-10
           lg:mt-5"
         onClick={handleClick}
       >
@@ -165,7 +165,7 @@ const NavBar = () => {
           }}
           animate={{ scale: 1, opacity: 1, }}
           className="min-w-[70vw] flex flex-col justify-between items-center
-            fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-dark/50
+            fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-dark/50
             dark:bg-light/50 rounded-lg backdrop-blur-xl py-32 xs:py-12"
         >
           <nav className="flex items-center flex-col justify-center py-[2rem]">

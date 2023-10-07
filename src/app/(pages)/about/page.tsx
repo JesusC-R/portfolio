@@ -10,6 +10,7 @@ import Layout from "@/app/components/Layout";
 import Skills from "@/app/(pages)/about/components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import TransitionEffect from "@/app/components/TransitionEffect";
 
 interface AnimatedNumbersProps {
   value: number;
@@ -52,6 +53,7 @@ const About = () => {
 
   return (
     <>
+      <TransitionEffect />
       <head>
         <title>JCR | About Page</title>
         <meta name="description" content="Any description" />
