@@ -34,8 +34,8 @@ export default function Home() {
             lg:text-center xs:w-[200%]"
           >
             <AnimatedText
-              className="!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl
-                sm:!text-3xl xs:!text-xl sm:inline-block"
+              className="!text-6xl !text-left lg:!text-center lg:!text-6xl md:!text-5xl
+                sm:inline-block mb-16 xl:!text-7xl sm:!text-6xl xs:!text-3xl sm:my-8"
               text="Turning Vision Into Reality With Code And Design"
             />
             <p className="my-4 text-base font-medium md:text-sm sm:text-xs sm:p-2">
